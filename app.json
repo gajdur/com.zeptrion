@@ -1,0 +1,146 @@
+{
+   "id":"com.zeptrion",
+   "version":"0.0.1",
+   "compatibility":">=0.9",
+   "category":[
+      "appliances",
+      "lights",
+      "internet"
+   ],
+   "name":{
+      "en":"Zeptrion Air",
+      "de":"Zeptrion Air"
+   },
+   "description":{
+      "en":"Give Homey the ability to control your Zeptrion Air devices",
+      "de":"Läst euch eure Zeptrion Geräte kontrolieren"
+   },
+   "author":{
+      "name":"Viktor Gjorgjiev",
+      "email":"viktor.gjorgjiev@gmail.com"
+   },
+   "images":{
+      "large":"./assets/images/large.jpg",
+      "small":"./assets/images/small.jpg"
+   },
+   "dependencies":{
+      "net":"*"
+   },
+   "permissions":[
+      "homey:manager:speech-input",
+      "homey:manager:speech-output"
+   ],
+   "drivers":[
+      {
+         "id":"zeptrion_air_2k",
+         "name":{
+            "en":"Zeptrion Air 2K"
+         },
+         "class":"other",
+         "capabilities":[
+            "onoff",
+            "dim",
+            "windowcoverings_state"
+         ],
+         "mobile":{
+            "components":[
+               {
+                  "id":"icon",
+                  "capabilities":[
+                     "onoff",
+                     "dim",
+                     "windowcoverings_state"
+                  ]
+               }
+            ]
+         },
+         "pair":[
+            {
+               "id":"start"
+            },
+            {
+               "id":"list_devices",
+               "template":"list_devices",
+               "navigation":{
+                  "next":"add_devices"
+               }
+            },
+            {
+               "id":"add_devices",
+               "template":"add_devices"
+            }
+         ],
+         "settings":[
+            {
+               "type":"group",
+               "label":{
+                  "en":"General settings",
+                  "de":"Allgemeine Einstellungen"
+               },
+               "children":[
+                  {
+                     "id":"settingIPAddress",
+                     "type":"text",
+                     "label":{
+                        "en":"IP address",
+                        "de":"IP Adresse"
+                     },
+                     "value":"0.0.0.0"
+                  }
+               ]
+            }
+         ],
+         "images":{
+            "large":"/drivers/zeptrion/assets/images/large.png",
+            "small":"/drivers/zeptrion/assets/images/small.png"
+         }
+      }
+   ],
+   "flow":{
+      "actions":[
+         {
+            "id":"zeptrion_cmd",
+            "title":{
+               "en":"Send Command to your Device"
+            },
+            "args":[
+               {
+                  "name":"device",
+                  "type":"device",
+                  "placeholder":{
+                     "en":"Select Device",
+                     "de":"Gerät auswählen"
+                  },
+                  "filter":"driver_id=zeptrion_air_2k"
+               },
+			   {
+			   "name": "channel",
+			   "type": "dropdown",
+			   "values": [
+			   {"id": "ch1", "label": {"en": "Channel 1"}},
+			   {"id": "ch2", "label": {"en": "Channel 2"}},
+			   {"id": "ch3", "label": {"en": "Channel 3"}},
+			   {"id": "ch4", "label": {"en": "Channel 4"}}
+			   ],
+			   "placeholder": {"en": "Channel"}
+			 },
+			 {
+			   "name": "arguments",
+			   "type": "dropdown",
+			   "values": [
+			   {"id": "on", "label": {"en": "Switch on (100%)"}},
+			   {"id": "off", "label": {"en": "Switch off (0%)"}},
+			   {"id": "toggle", "label": {"en": "Toggle"}},
+			   {"id": "dim_up", "label": {"en": "Dim up"}},
+			   {"id": "dim_down", "label": {"en": "Dim down"}},
+			   {"id": "move_open", "label": {"en": "Blinds open"}},
+			   {"id": "move_close", "label": {"en": "Blinds close"}},
+			   {"id": "stop", "label": {"en": "Stop dimming/move"}}
+			   ],
+			   "placeholder": {"en": "Arguments"}
+			 }
+            ]
+         }
+      ]
+   }
+}
