@@ -67,8 +67,8 @@ function SendPOSTForm {
 	Homey.log ("Zeptrion app - sending " + arguments + " to " + hostIP);
     request.post({
         method: 'POST',
-        uri: 'http://'+hostIP+'/zrap/chctrl/'+channel',
+        url: 'http://'+hostIP+'/zrap/chctrl/'+channel'
         body: 'cmd='+arguments'
     })
 	Homey.log ('callback true');
-};
+}
