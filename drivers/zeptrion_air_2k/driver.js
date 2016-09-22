@@ -58,7 +58,6 @@ Homey.manager('flow').on('action.zeptrion_cmd', function (callback, args) {
 	var device = args.device;
 	var channel = args.channel;
 	var arguments = args.arguments;
-	command(device, channel, arguments);
 	SendPOSTForm ();
 	callback(null, true);
 });
@@ -67,7 +66,7 @@ function SendPOSTForm {
 	Homey.log ("Zeptrion app - sending " + arguments + " to " + hostIP);
     request.post({
         method: 'POST',
-        url: 'http://'+hostIP+'/zrap/chctrl/'+channel'
+        url: 'http://'+device+'/zrap/chctrl/'+channel'
         body: 'cmd='+arguments'
     })
 	Homey.log ('callback true');
