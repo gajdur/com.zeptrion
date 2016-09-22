@@ -125,7 +125,7 @@
 			   "placeholder": {"en": "Channel"}
 			 },
 			 {
-			   "name": "arguments",
+			   "name": "argument",
 			   "type": "dropdown",
 			   "values": [
 			   {"id": "on", "label": {"en": "Switch on (100%)"}},
