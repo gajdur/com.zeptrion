@@ -49,25 +49,31 @@ module.exports.pair = function (socket) {
 	});
 
 	socket.on('disconnect', function(){
-		Homey.log("Yamaha receiver app - User aborted pairing, or pairing is finished");
-	})
-}
+		Homey.log("Zeptrion app - User aborted pairing, or pairing is finished");
+	});
+};
 
 // flow action handlers
 Homey.manager('flow').on('action.zeptrion_cmd', function (callback, args) {
 	var device = args.device;
 	var channel = args.channel;
-	var arguments = args.arguments;
-	SendPOSTForm ();
+	var argument = args.argument;
+	request.post({
+        method: 'POST',
+        uri: 'http://'+device+'/zrap/chctrl/'+channel,
+        body: 'cmd='+argument
+    })
+	//  SendPOSTForm ();
 	callback(null, true);
 });
-
+/*
 function SendPOSTForm {
 	Homey.log ("Zeptrion app - sending " + arguments + " to " + hostIP);
     request.post({
         method: 'POST',
         url: 'http://'+device+'/zrap/chctrl/'+channel'
-        body: 'cmd='+arguments'
+        body: 'cmd='+argument'
     })
 	Homey.log ('callback true');
 }
+*/
