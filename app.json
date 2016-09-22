@@ -36,24 +36,8 @@
          "name":{
             "en":"Zeptrion Air 2K"
          },
-         "class":"windowcoverings",
-         "capabilities":[
-            "onoff",
-            "dim",
-            "windowcoverings_state"
-         ],
-         "mobile":{
-            "components":[
-               {
-                  "id":"icon",
-                  "capabilities":[
-                     "onoff",
-                     "dim",
-                     "windowcoverings_state"
-                  ]
-               }
-            ]
-         },
+         "class":"other",
+         "capabilities":[],
          "pair":[
             {
                "id":"start"
