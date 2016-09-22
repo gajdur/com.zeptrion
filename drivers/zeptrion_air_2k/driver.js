@@ -53,6 +53,26 @@ module.exports.pair = function (socket) {
 	});
 };
 
+// these are the methods that respond to get/set calls from Homey
+// for example when a user pressed a button
+module.exports.capabilities = {};
+module.exports.capabilities.onoff = {};
+module.exports.capabilities.onoff.get = function( device_data, callback ) {
+    var device = getDeviceByData( device_data );
+    if( device instanceof Error ) return callback( device );
+    return callback( null, device.state.onoff );
+}
+module.exports.capabilities.onoff.set = function( device_data, onoff, callback ) {
+    var device = getDeviceByData( device_data );
+    if( device instanceof Error ) return callback( device );
+    device.state.onoff = onoff;
+    // here you would use a wireless technology to actually turn the device on or off
+    // also emit the new value to realtime
+    // this produced Insights logs and triggers Flows
+    self.realtime( device_data, 'onoff', device.state.onoff)
+    return callback( null, device.state.onoff );
+}
+
 // flow action handlers
 Homey.manager('flow').on('action.zeptrion_cmd', function (callback, args) {
 	var device = args.device;
