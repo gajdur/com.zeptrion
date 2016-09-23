@@ -55,12 +55,12 @@ module.exports.pair = function (socket) {
 
 // flow action handlers
 Homey.manager('flow').on('action.zeptrion_cmd', function (callback, args) {
-	var device = args.device;
+	// var device = args.device;
 	var channel = args.channel;
 	var argument = args.argument;
 	request.post({
         method: 'POST',
-        uri: 'http://'+device+'/zrap/chctrl/'+channel,
+        uri: 'http://'+hostIP+'/zrap/chctrl/'+channel,
         body: 'cmd='+argument
     })
 	//  SendPOSTForm ();
