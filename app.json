@@ -1,7 +1,8 @@
 {
-   "id":"com.zeptrion",
-   "version":"0.0.1",
+   "id": "com.zeptrion",
+   "version":"0.0.2",
    "compatibility":">=0.9",
+   "sdk": 2,
    "category":[
       "appliances",
       "lights",
