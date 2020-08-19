@@ -58,43 +58,43 @@
             "en": "Zeptrion Air 2K"
          },
          "images": {
-            "large":"/drivers/zeptrion/assets/images/large.png",
-            "small":"/drivers/zeptrion/assets/images/small.png"
+            "large": "/drivers/zeptrion/assets/images/large.png",
+            "small": "/drivers/zeptrion/assets/images/small.png"
 	 },
-	 "class":"other",
-         "capabilities":[],
-         "pair":[
+	 "class": "other",
+         "capabilities": [],
+         "pair": [
             {
-               "id":"start"
+               "id": "start"
             },
             {
-               "id":"list_devices",
-               "template":"list_devices",
-               "navigation":{
-                  "next":"add_devices"
+               "id": "list_devices",
+               "template": "list_devices",
+               "navigation": {
+                  "next": "add_devices"
                }
             },
             {
-               "id":"add_devices",
-               "template":"add_devices"
+               "id": "add_devices",
+               "template": "add_devices"
             }
          ],
-         "settings":[
+         "settings": [
             {
-               "type":"group",
-               "label":{
-                  "en":"General settings",
-                  "de":"Allgemeine Einstellungen"
+               "type": "group",
+               "label": {
+                  "en": "General settings",
+                  "de": "Allgemeine Einstellungen"
                },
-               "children":[
+               "children": [
                   {
-                     "id":"settingIPAddress",
-                     "type":"text",
-                     "label":{
-                        "en":"IP address",
-                        "de":"IP Adresse"
+                     "id": "settingIPAddress",
+                     "type": "text",
+                     "label": {
+                        "en": "IP address",
+                        "de": "IP Adresse"
                      },
-                     "value":"0.0.0.0"
+                     "value": "0.0.0.0"
                   }
                ]
             }
