@@ -52,7 +52,7 @@
 	
    "drivers": [
       {
-         "id":" zeptrion_air_2k_switch",
+         "id": "zeptrion_air_2k_switch",
 	 "discovery": "zapp",
          "name": {
             "en": "Zeptrion Air 2K Light Switch"
@@ -304,22 +304,22 @@
 
 
 
-   "flow":{
-      "actions":[
+   "flow": {
+      "actions": [
          {
-            "id":"zeptrion_cmd",
-            "title":{
-               "en":"Send Command to your Device"
+            "id": "zeptrion_cmd_switch",
+            "title": {
+               "en": "Send Command to your Device"
             },
-            "args":[
+            "args": [
                {
-                  "name":"device",
-                  "type":"device",
-                  "placeholder":{
-                     "en":"Select Device",
-                     "de":"Gerät auswählen"
+                  "name": "device",
+                  "type": "device",
+                  "placeholder": {
+                     "en": "Select Device",
+                     "de": "Gerät auswählen"
                   },
-                  "filter":"driver_id=zeptrion_air_2k"
+                  "filter": "driver_id=zeptrion_air_2k_switch"
                },
 			   {
 			   "name": "channel",
@@ -339,6 +339,41 @@
 			   {"id": "on", "label": {"en": "Switch on (100%)"}},
 			   {"id": "off", "label": {"en": "Switch off (0%)"}},
 			   {"id": "toggle", "label": {"en": "Toggle"}},
+			   ],
+			   "placeholder": {"en": "Arguments"}
+			 }
+            ]
+         }
+         {
+            "id": "zeptrion_cmd_roller",
+            "title": {
+               "en": "Send Command to your Device"
+            },
+            "args": [
+               {
+                  "name": "device",
+                  "type": "device",
+                  "placeholder": {
+                     "en": "Select Device",
+                     "de": "Gerät auswählen"
+                  },
+                  "filter": "driver_id=zeptrion_air_2k_roller"
+               },
+			   {
+			   "name": "channel",
+			   "type": "dropdown",
+			   "values": [
+			   {"id": "ch1", "label": {"en": "Channel 1"}},
+			   {"id": "ch2", "label": {"en": "Channel 2"}},
+			   {"id": "ch3", "label": {"en": "Channel 3"}},
+			   {"id": "ch4", "label": {"en": "Channel 4"}}
+			   ],
+			   "placeholder": {"en": "Channel"}
+			 },
+			 {
+			   "name": "argument",
+			   "type": "dropdown",
+			   "values": [
 			   {"id": "dim_up", "label": {"en": "Dim up"}},
 			   {"id": "dim_down", "label": {"en": "Dim down"}},
 			   {"id": "move_open", "label": {"en": "Blinds open"}},
@@ -349,6 +384,7 @@
 			 }
             ]
          }
-      ]
+      ]	   
+	   
    }
 }
