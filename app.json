@@ -23,9 +23,6 @@
     "dependencies": {
         "net": "*"
     },
-
-
-
     "discovery": {
         "zeptrion_2k": {
             "type": "mdns-sd",
@@ -43,10 +40,10 @@
                     }
                 }]
             ]
-        },
+        }
+    },
 
-
-        "drivers": [{
+    "drivers": [{
             "id": "zeptrion_air_2k_switch",
             "discovery": "zapp",
             "name": {
@@ -156,7 +153,7 @@
                     }
                 ],
             }
-        }],
+        },
 
 
         {
