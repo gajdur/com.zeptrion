@@ -1,43 +1,67 @@
 {
    "id": "com.zeptrion",
-   "version": "0.0.2",
-   "compatibility": ">=0.9",
    "sdk": 2,
-   "category":[
-      "appliances",
-      "lights",
-      "internet"
-   ],
-   "name":{
-      "en":"Zeptrion Air",
-      "de":"Zeptrion Air"
+   "name": {
+      "en": "Zeptrion Air",
+      "de": "Zeptrion Air"
+   },	
+   "version": "0.0.2",	
+   "compatibility": ">=3.0.0",		
+   "author": {
+      "name": "Viktor Gjorgjiev",
+      "email": "viktor.gjorgjiev@gmail.com"
    },
-   "description":{
-      "en":"Give Homey the ability to control your Zeptrion Air devices",
-      "de":"Läst euch eure Zeptrion Geräte kontrolieren"
+   "images": {
+      "large": "./assets/images/large.jpg",
+      "small": "./assets/images/small.jpg"
    },
-   "author":{
-      "name":"Viktor Gjorgjiev",
-      "email":"viktor.gjorgjiev@gmail.com"
+   "category": "appliances",
+   "description": {
+      "en": "Give Homey the ability to control your Zeptrion Air devices",
+      "de": "Läst euch eure Zeptrion Geräte kontrolieren"
    },
-   "images":{
-      "large":"./assets/images/large.jpg",
-      "small":"./assets/images/small.jpg"
+   "dependencies": {
+      "net": "*"
    },
-   "dependencies":{
-      "net":"*"
-   },
-   "permissions":[
-      "homey:manager:speech-input",
-      "homey:manager:speech-output"
-   ],
-   "drivers":[
+	
+	
+
+	
+"discovery": {
+    "zeptrion_2k": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "name": "http",
+        "protocol": "tcp"
+      },
+      "id": "{{txt.id}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.id",
+            "match": {
+            "type": "regex",
+            "value": "^zapp-"
+            }
+          }
+        ]
+      ]
+    },	
+	
+	
+	
+   "drivers": [
       {
-         "id":"zeptrion_air_2k",
-         "name":{
-            "en":"Zeptrion Air 2K"
+         "id":" zeptrion_air_2k",
+	 "discovery": "zapp",
+         "name": {
+            "en": "Zeptrion Air 2K"
          },
-         "class":"other",
+         "images": {
+            "large":"/drivers/zeptrion/assets/images/large.png",
+            "small":"/drivers/zeptrion/assets/images/small.png"
+	 },
+	 "class":"other",
          "capabilities":[],
          "pair":[
             {
@@ -75,9 +99,6 @@
                ]
             }
          ],
-         "images":{
-            "large":"/drivers/zeptrion/assets/images/large.png",
-            "small":"/drivers/zeptrion/assets/images/small.png"
          }
       }
    ],
