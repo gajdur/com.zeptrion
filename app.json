@@ -302,89 +302,166 @@
 
 
 
-
-
-   "flow": {
-      "actions": [
-         {
-            "id": "zeptrion_cmd_switch",
-            "title": {
-               "en": "Send Command to your Device"
+"flow": {
+    "actions": [{
+        "id": "zeptrion_cmd_switch",
+        "title": {
+            "en": "Send Command to your Device"
+        },
+        "args": [{
+                "name": "device",
+                "type": "device",
+                "placeholder": {
+                    "en": "Select Device",
+                    "de": "Gerät auswählen"
+                },
+                "filter": "driver_id=zeptrion_air_2k_switch"
             },
-            "args": [
-               {
-                  "name": "device",
-                  "type": "device",
-                  "placeholder": {
-                     "en": "Select Device",
-                     "de": "Gerät auswählen"
-                  },
-                  "filter": "driver_id=zeptrion_air_2k_switch"
-               },
-			   {
-			   "name": "channel",
-			   "type": "dropdown",
-			   "values": [
-			   {"id": "ch1", "label": {"en": "Channel 1"}},
-			   {"id": "ch2", "label": {"en": "Channel 2"}},
-			   {"id": "ch3", "label": {"en": "Channel 3"}},
-			   {"id": "ch4", "label": {"en": "Channel 4"}}
-			   ],
-			   "placeholder": {"en": "Channel"}
-			 },
-			 {
-			   "name": "argument",
-			   "type": "dropdown",
-			   "values": [
-			   {"id": "on", "label": {"en": "Switch on (100%)"}},
-			   {"id": "off", "label": {"en": "Switch off (0%)"}},
-			   {"id": "toggle", "label": {"en": "Toggle"}},
-			   ],
-			   "placeholder": {"en": "Arguments"}
-			 }
-            ]
-         }
-         {
-            "id": "zeptrion_cmd_roller",
-            "title": {
-               "en": "Send Command to your Device"
+            {
+                "name": "channel",
+                "type": "dropdown",
+                "values": [{
+                        "id": "ch1",
+                        "label": {
+                            "en": "Channel 1"
+                        }
+                    },
+                    {
+                        "id": "ch2",
+                        "label": {
+                            "en": "Channel 2"
+                        }
+                    },
+                    {
+                        "id": "ch3",
+                        "label": {
+                            "en": "Channel 3"
+                        }
+                    },
+                    {
+                        "id": "ch4",
+                        "label": {
+                            "en": "Channel 4"
+                        }
+                    }
+                ],
+                "placeholder": {
+                    "en": "Channel"
+                }
             },
-            "args": [
-               {
-                  "name": "device",
-                  "type": "device",
-                  "placeholder": {
-                     "en": "Select Device",
-                     "de": "Gerät auswählen"
-                  },
-                  "filter": "driver_id=zeptrion_air_2k_roller"
-               },
-			   {
-			   "name": "channel",
-			   "type": "dropdown",
-			   "values": [
-			   {"id": "ch1", "label": {"en": "Channel 1"}},
-			   {"id": "ch2", "label": {"en": "Channel 2"}},
-			   {"id": "ch3", "label": {"en": "Channel 3"}},
-			   {"id": "ch4", "label": {"en": "Channel 4"}}
-			   ],
-			   "placeholder": {"en": "Channel"}
-			 },
-			 {
-			   "name": "argument",
-			   "type": "dropdown",
-			   "values": [
-			   {"id": "dim_up", "label": {"en": "Dim up"}},
-			   {"id": "dim_down", "label": {"en": "Dim down"}},
-			   {"id": "move_open", "label": {"en": "Blinds open"}},
-			   {"id": "move_close", "label": {"en": "Blinds close"}},
-			   {"id": "stop", "label": {"en": "Stop dimming/move"}}
-			   ],
-			   "placeholder": {"en": "Arguments"}
-			 }
-            ]
-         }
-      ]	   
-	   
-   }
+            {
+                "name": "argument",
+                "type": "dropdown",
+                "values": [{
+                        "id": "on",
+                        "label": {
+                            "en": "Switch on (100%)"
+                        }
+                    },
+                    {
+                        "id": "off",
+                        "label": {
+                            "en": "Switch off (0%)"
+                        }
+                    },
+                    {
+                        "id": "toggle",
+                        "label": {
+                            "en": "Toggle"
+                        }
+                    },
+                ],
+                "placeholder": {
+                    "en": "Arguments"
+                }
+            }
+        ]
+    } {
+        "id": "zeptrion_cmd_roller",
+        "title": {
+            "en": "Send Command to your Device"
+        },
+        "args": [{
+                "name": "device",
+                "type": "device",
+                "placeholder": {
+                    "en": "Select Device",
+                    "de": "Gerät auswählen"
+                },
+                "filter": "driver_id=zeptrion_air_2k_roller"
+            },
+            {
+                "name": "channel",
+                "type": "dropdown",
+                "values": [{
+                        "id": "ch1",
+                        "label": {
+                            "en": "Channel 1"
+                        }
+                    },
+                    {
+                        "id": "ch2",
+                        "label": {
+                            "en": "Channel 2"
+                        }
+                    },
+                    {
+                        "id": "ch3",
+                        "label": {
+                            "en": "Channel 3"
+                        }
+                    },
+                    {
+                        "id": "ch4",
+                        "label": {
+                            "en": "Channel 4"
+                        }
+                    }
+                ],
+                "placeholder": {
+                    "en": "Channel"
+                }
+            },
+            {
+                "name": "argument",
+                "type": "dropdown",
+                "values": [{
+                        "id": "dim_up",
+                        "label": {
+                            "en": "Dim up"
+                        }
+                    },
+                    {
+                        "id": "dim_down",
+                        "label": {
+                            "en": "Dim down"
+                        }
+                    },
+                    {
+                        "id": "move_open",
+                        "label": {
+                            "en": "Blinds open"
+                        }
+                    },
+                    {
+                        "id": "move_close",
+                        "label": {
+                            "en": "Blinds close"
+                        }
+                    },
+                    {
+                        "id": "stop",
+                        "label": {
+                            "en": "Stop dimming/move"
+                        }
+                    }
+                ],
+                "placeholder": {
+                    "en": "Arguments"
+                }
+            }
+        ]
+    }]
+
+}
 }
